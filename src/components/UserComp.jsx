@@ -2,7 +2,7 @@ import React, { memo, useState } from "react";
 import UserIconComp from "./UserIconComp";
 import { SendMoney } from "./SendMoney";
 
-const UserComp = memo(({ username, id, fetchBalance }) => {
+const UserComp = memo(({ firstName, lastName, id, fetchBalance }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const toggleModel = () => {
@@ -11,8 +11,10 @@ const UserComp = memo(({ username, id, fetchBalance }) => {
   return (
     <div className="flex justify-between">
       <div className="flex gap-4">
-        <UserIconComp user={username} />
-        <p className="text-2xl font-semibold">{username}</p>
+        <UserIconComp user={firstName} />
+        <p className="text-2xl font-semibold">
+          {firstName} {lastName}
+        </p>
       </div>
       <div>
         <button

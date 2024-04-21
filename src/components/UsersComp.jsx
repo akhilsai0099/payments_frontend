@@ -44,7 +44,8 @@ const UsersComp = memo(({ fetchBalance }) => {
           <>
             <UserComp
               key={user.id}
-              username={user.firstName}
+              firstName={user.firstName}
+              lastName={user.lastName}
               id={user.id}
               fetchBalance={fetchBalance}
             />
