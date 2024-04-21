@@ -6,7 +6,9 @@ const UsersComp = memo(({ fetchBalance }) => {
   const [users, setUsers] = useState([]);
   const token = localStorage.getItem("token");
   const fetchUsers = async () => {
-    let url = `http://localhost:3000/api/v1/user/bulk?filter=${filter}`;
+    let url = `${
+      import.meta.env.VITE_REACT_APP_BACKEND_URL
+    }/api/v1/user/bulk?filter=${filter}`;
     try {
       const response = await axios.post(
         url,

@@ -7,7 +7,9 @@ export const SendMoney = ({ name, id, toggleModel, fetchBalance }) => {
   const handleTransfer = async () => {
     try {
       const res = await axios.post(
-        "http://localhost:3000/api/v1/accounts/transfer",
+        `${
+          import.meta.env.VITE_REACT_APP_BACKEND_URL
+        }/api/v1/accounts/transfer`,
         {
           amount: amount,
           to: id,

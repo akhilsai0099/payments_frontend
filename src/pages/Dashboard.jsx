@@ -10,7 +10,7 @@ const Dashboard = () => {
   const token = localStorage.getItem("token");
   const fetchBalance = async () => {
     const res = await axios.get(
-      "http://localhost:3000/api/v1/accounts/balance",
+      `${import.meta.env.VITE_REACT_APP_BACKEND_URL}/api/v1/accounts/balance`,
       {
         headers: { Authorization: `Bearer ${token}` },
       }

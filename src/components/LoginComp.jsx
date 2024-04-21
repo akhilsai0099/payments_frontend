@@ -17,10 +17,10 @@ const LoginComp = () => {
       return;
     }
     try {
-      const res = await axios.post(
-        "http://localhost:3000/api/v1/user/signin",
-        form
-      );
+      const url = `${
+        import.meta.env.VITE_REACT_APP_BACKEND_URL
+      }/api/v1/user/signin`;
+      const res = await axios.post(url, form);
       console.log(res);
       if (res.status === 200) {
         localStorage.setItem("token", res.data.token);
