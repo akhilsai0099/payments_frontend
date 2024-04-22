@@ -26,7 +26,7 @@ const UserComp = memo(({ firstName, lastName, id, fetchBalance }) => {
         {isModalOpen ? (
           <SendMoney
             fetchBalance={fetchBalance}
-            name={username}
+            name={firstName}
             id={id}
             toggleModel={setIsModalOpen}
           />
